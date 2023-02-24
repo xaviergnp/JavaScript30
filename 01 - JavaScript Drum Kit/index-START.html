@@ -59,7 +59,15 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  const keyPress = document.querySelectorAll(".key");
 
+  document.addEventListener("keydown", 
+    keyPress.forEach((e) => {
+      
+      if (e.keyCode == keyPress.getAttribute("data-key")) {
+        keyPress.classList.toggle("playing");
+      }
+  }));
 </script>
 
 
