@@ -72,14 +72,21 @@
   }
 
   function removeTransition(e) {
-    if(e.propertyName !== 'transform') return;
+    // if(e.propertyName !== 'transform') return;
     this.classList.remove("playing");
   }
 
   document.addEventListener("keydown", playSound);
 
+  // Transition Method
   const keyBoxes = document.querySelectorAll(".key");
   keyBoxes.forEach(keyBox => keyBox.addEventListener("transitionend", removeTransition));
+
+  // Key Up Method
+  // document.addEventListener("keyup", (e) => {
+  //   const keyBox = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  //   keyBox.classList.remove("playing");
+  // });
   
 </script>
 
