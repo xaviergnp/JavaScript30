@@ -46,10 +46,13 @@
   const boxes = document.querySelectorAll("div");
   function logValue(e) {
     console.log(this.classList.value);
-    e.stopPropagation();
+    // e.stopPropagation();
   }
   boxes.forEach(box => {
-    box.addEventListener("click", logValue,  {capture:false});
+    box.addEventListener("click", logValue,  {
+      capture:false,
+      once: true
+    });
   });
 </script>
 </body>
