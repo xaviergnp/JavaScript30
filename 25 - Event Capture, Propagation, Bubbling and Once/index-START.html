@@ -48,7 +48,7 @@
     console.log(this.classList.value);
   }
   boxes.forEach(box => {
-    box.addEventListener("click", logValue);
+    box.addEventListener("click", logValue,  {capture:true});
   });
 </script>
 </body>
