@@ -78,11 +78,11 @@
 
   document.addEventListener("keydown", playSound);
 
-  // Transition Method
+  //Transition Method
   const keyBoxes = document.querySelectorAll(".key");
   keyBoxes.forEach(keyBox => keyBox.addEventListener("transitionend", removeTransition));
 
-  // Key Up Method
+  //Key Up Method
   // document.addEventListener("keyup", (e) => {
   //   const keyBox = document.querySelector(`.key[data-key="${e.keyCode}"]`);
   //   keyBox.classList.remove("playing");
