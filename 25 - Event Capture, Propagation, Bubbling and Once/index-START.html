@@ -41,7 +41,7 @@
   }
 </style>
 
-<button></button>
+<button>Click Me!</button>
 <script>
   const boxes = document.querySelectorAll("div");
   function logValue(e) {
@@ -53,6 +53,13 @@
       capture:false,
       once: true
     });
+  });
+
+  const button = document.querySelector("button");
+  button.addEventListener("click", () => {
+    console.log("Click!!!");
+  } ,{
+    capture:false
   });
 </script>
 </body>
