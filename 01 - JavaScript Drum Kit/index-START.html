@@ -59,22 +59,23 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-  const keyBox = document.querySelectorAll(".key");
+ 
   
 
   document.addEventListener("keydown", (key) => {
-    keyBox.forEach((box) => {
-      if (key.keyCode == box.getAttribute("data-key")) {
-        const keyAudio = document.querySelector(`audio[data-key="${key.keyCode}"]`);
-        keyAudio.currentTime = 0;
-        keyAudio.play();
-        box.classList.toggle("playing");
-        
-        document.addEventListener("keyup", (key) => {
-          box.classList.toggle("playing");
-        })
-      }
-  })});
+    const keyBox = document.querySelector(`.key[data-key="${key.keyCode}"]`);
+    if (!keyBox) return;
+
+    const keyAudio = document.querySelector(`audio[data-key="${key.keyCode}"]`);
+    keyAudio.currentTime = 0;
+    keyAudio.play();
+
+    keyBox.classList.toggle("playing");
+    
+    document.addEventListener("keyup", (key) => {
+      keyBox.classList.toggle("playing");
+    })
+  });
   
 </script>
 
