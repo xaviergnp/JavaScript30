@@ -61,13 +61,13 @@
 <script>
   const keyPress = document.querySelectorAll(".key");
 
-  document.addEventListener("keydown", 
-    keyPress.forEach((e) => {
+  document.addEventListener("keydown", (key) => {
+    keyPress.forEach((press) => {
       
-      if (e.keyCode == keyPress.getAttribute("data-key")) {
-        keyPress.classList.toggle("playing");
+      if (key.keyCode == press.getAttribute("data-key")) {
+        press.classList.toggle("playing");
       }
-  }));
+  })});
 </script>
 
 
